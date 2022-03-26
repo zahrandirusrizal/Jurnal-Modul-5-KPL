@@ -17,7 +17,7 @@ namespace modul5_1302204080
 
         public void increaseplayCount(int tambah)
         {
-            Debug.Assert(tambah >= 0 && tambah <= 10000000, "Tidak boleh melebihi 10.000.000");
+            Debug.Assert(tambah >= 0 && tambah <= 25000000, "Tidak boleh melebihi 25.000.000");
             int test = this.playCount;
 
             try
@@ -27,8 +27,8 @@ namespace modul5_1302204080
             catch (Exception ex)
             {
                 Console.WriteLine("Terjadi error saat melakukan penambahan : " + ex.Message);
+                this.playCount = this.playCount + 0;
             }
-            this.playCount = this.playCount + tambah;
         }
 
         public void printVideoDetails()
@@ -53,7 +53,9 @@ namespace modul5_1302204080
 
             Random random = new Random();
 
-            Debug.Assert(judul_masukan.Length < 101 && judul_masukan != null, "Judulnya tidak boleh melebihi 100 karakter");
+            Debug.Assert(judul_masukan.Length <= 200 && judul_masukan != null, 
+                "Judulnya tidak boleh melebihi 200 karakter " +
+                "dan tidak boleh kosong");
             this.title = judul_masukan;
 
 

@@ -26,6 +26,8 @@ namespace modul5_1302204080
 
         public void addVideo(SayaTubeVideo masukan)
         {
+            Debug.Assert(masukan != null && masukan.getPlayCount() <=int.MaxValue , "Video yang dimasukkan tidak boleh null" +
+                "dan playcountnya tidak bileh melebihi maxInt");
             this.uploadedVideos.Add(masukan);
         }
 
@@ -44,6 +46,9 @@ namespace modul5_1302204080
         {
             Random random = new Random();
 
+            Debug.Assert(user_name != null && user_name.Length <= 100, "Username tidak boleh kosong " +
+                "maupun melebihi " +
+                "100 karakter");
             this.username = user_name;
 
             this.id = random.Next();
